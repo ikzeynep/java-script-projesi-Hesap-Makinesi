@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Şifre Üretme</title>
+</head>
+ 
+<body>
+ 
+	<script>
+	function rasteleSembol(uzunluk, semboller) {
+		var maske = '';
+		if (semboller.indexOf('a') > -1) maske += 'abcdefghijklmnopqrstuvwxyz';
+		if (semboller.indexOf('A') > -1) maske += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		if (semboller.indexOf('0') > -1) maske += '0123456789';
+		if (semboller.indexOf('#') > -1) maske += '~`!@#$%^&*()_+-={}[]:";\'<>?,./|\\';
+		var sonuc = '';
+ 
+		for (var i = uzunluk; i > 0; --i) 
+		{
+		sonuc += maske[Math.floor(Math.random() * maske.length)];
+		}
+		return sonuc;
+	}
+ 
+//Örnek Kullanım
+ 
+		alert(rasteleSembol(1, 'aA')); //rastgele harf üretir.
+		alert(rasteleSembol(4, '0#')); //4 basamaklı sayı ve sembollerden üretilir.
+		alert(rasteleSembol(8, 'aA')); //8 basamaklı küçük büyük harflerin tamamı
+		alert(rasteleSembol(5, '#aA'));//5 basamaklı büyük küçük ve sayılardan üretilir.
+	</script>
+</body>
+</html>
+ 
+
